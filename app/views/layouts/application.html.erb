@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FakeInsta</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <a href="/posts">게시판으로</a><br>
+  <% if session[:email]%>
+    <a href="/users/logout">로그아웃</a>
+  <%else%>
+    <a href="/users/signup">회원가입</a><br>
+    <a href="/users/login">로그인</a>
+  <%end%>
+
+<%= yield %>
+
+</body>
+</html>
